@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品預覽 📷 · DD_Woof</title>
+    <meta name="description" content="選取部分攝影作品集，點擊各組可前往相簿" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <img src="assets/img/paw_icon.webp" alt="Loading..." class="preloader-paw" />
+    </div>
+
+    <!-- ====== NAVBAR ====== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-home" aria-label="首頁">
+                <img src="assets/img/paw_icon.webp" alt="Home" class="nav-paw" />
+            </a>
+            <div class="nav-links-wrapper" id="navLinksWrapper">
+                <button class="nav-toggle-btn" id="navToggleBtn" aria-label="切換選單">
+                    <img src="assets/img/paw_icon.webp" alt="Menu" class="nav-toggle-icon" />
+                </button>
+                <div class="nav-links">
+                    <a href="services.html">拍攝服務委託</a>
+                    <a href="portfolio.html" class="active">作品預覽</a>
+                </div>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="開啟選單">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileClose">✕</button>
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-brand">
+                <img src="assets/img/paw_icon.webp" alt="Paw" class="mobile-menu-paw" />
+            </div>
+            <a href="services.html">拍攝服務委託</a>
+            <a href="portfolio.html" class="active">作品預覽</a>
+        </div>
+    </div>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <main class="portfolio-page" id="main-content">
+        <h1 class="portfolio-title reveal glow-text">作品預覽 <span class="title-emoji">📷</span></h1>
+        <p class="portfolio-subtitle reveal delay-100">選取部分攝影作品集，點擊各組可前往相簿</p>
+
+        <div class="portfolio-grid reveal delay-200">
+
+            <div class="portfolio-item">
+                <a href="https://www.flickr.com/people/196100873@N06/" target="_blank" rel="noopener">
+                    <img src="https://live.staticflickr.com/65535/54969484448_2627ba378e_b.jpg" alt="Featured Work"
+                        loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-label">Featured Work</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="portfolio-item">
+                <a href="https://www.flickr.com/people/196100873@N06/" target="_blank" rel="noopener">
+                    <img src="https://live.staticflickr.com/65535/54313005413_ce64c5cc6f_b.jpg"
+                        alt="Portrait Collection" loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-label">Portrait Collection</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="portfolio-item">
+                <a href="https://www.flickr.com/people/196100873@N06/" target="_blank" rel="noopener">
+                    <img src="https://live.staticflickr.com/65535/53416410452_a69a039d9b_b.jpg" alt="Street Photography"
+                        loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-label">Street Photography</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="portfolio-item">
+                <a href="https://www.flickr.com/people/196100873@N06/" target="_blank" rel="noopener">
+                    <img src="https://live.staticflickr.com/65535/54024545070_955b252ca9_b.jpg" alt="Night Scapes"
+                        loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-label">Night Scapes</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="portfolio-item">
+                <a href="https://www.flickr.com/people/196100873@N06/" target="_blank" rel="noopener">
+                    <img src="https://live.staticflickr.com/65535/54024097486_28f2197fba_b.jpg" alt="Creative Shadows"
+                        loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-label">Creative Shadows</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="portfolio-item">
+                <a href="https://www.flickr.com/people/196100873@N06/" target="_blank" rel="noopener">
+                    <img src="assets/img/homepage.jpg" alt="Archive" loading="lazy" />
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-label">Archive</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <a href="#" class="footer-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"
+            aria-label="回到頂部">↑</a>
+        <p>© 2026 ddwoof</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

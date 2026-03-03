@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DD_Woof</title>
+    <meta name="description" content="嗨！這裡是 ㄉㄉ" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <img src="assets/img/paw_icon.webp" alt="Loading..." class="preloader-paw" />
+    </div>
+
+    <!-- ====== NAVBAR ====== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-home" aria-label="首頁">
+                <img src="assets/img/paw_icon.webp" alt="Home" class="nav-paw" />
+            </a>
+            <div class="nav-links-wrapper" id="navLinksWrapper">
+                <button class="nav-toggle-btn" id="navToggleBtn" aria-label="切換選單">
+                    <img src="assets/img/paw_icon.webp" alt="Menu" class="nav-toggle-icon" />
+                </button>
+                <div class="nav-links">
+                    <a href="services.html">拍攝服務委託</a>
+                    <a href="portfolio.html">作品預覽</a>
+                </div>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="開啟選單">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileClose">✕</button>
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-brand">
+                <img src="assets/img/paw_icon.webp" alt="Paw" class="mobile-menu-paw" />
+            </div>
+            <a href="services.html">拍攝服務委託</a>
+            <a href="portfolio.html">作品預覽</a>
+        </div>
+    </div>
+
+    <!-- ====== BLURRED BACKGROUND ====== -->
+    <div class="homepage-bg"></div>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <main class="homepage-main" id="main-content">
+        <div class="homepage-grid">
+
+            <!-- Left column: Carousel -->
+            <div class="carousel-col">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide active">
+                            <img src="https://live.staticflickr.com/65535/54969484448_2627ba378e_b.jpg" alt="作品 1"
+                                loading="eager" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://live.staticflickr.com/65535/54313005413_ce64c5cc6f_b.jpg" alt="作品 2"
+                                loading="lazy" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://live.staticflickr.com/65535/54313182970_392d46c455_b.jpg" alt="作品 3"
+                                loading="lazy" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://live.staticflickr.com/65535/54312974129_4e7db144ab_b.jpg" alt="作品 4"
+                                loading="lazy" />
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg"
+                                alt="作品 5" loading="lazy" />
+                        </div>
+                    </div>
+
+                    <!-- Prev / Next -->
+                    <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="上一張">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4.5"
+                            stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button class="carousel-btn carousel-next" id="carouselNext" aria-label="下一張">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4.5"
+                            stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+
+                    <!-- Dots -->
+                    <div class="carousel-dots" id="carouselDots">
+                        <button class="dot active" data-index="0" aria-label="第 1 張"></button>
+                        <button class="dot" data-index="1" aria-label="第 2 張"></button>
+                        <button class="dot" data-index="2" aria-label="第 3 張"></button>
+                        <button class="dot" data-index="3" aria-label="第 4 張"></button>
+                        <button class="dot" data-index="4" aria-label="第 5 張"></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right column: Avatar + Title + Text -->
+            <div class="homepage-right-col">
+                <div class="avatar-container">
+                    <img src="assets/img/icon.webp" alt="DD_Woof" class="homepage-icon" />
+                    <div class="homepage-socials">
+                        <a href="https://x.com/DD_Woof" target="_blank" rel="noopener" aria-label="X (Twitter)"
+                            class="social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.flickr.com/people/196100873@N06/" target="_blank" rel="noopener"
+                            aria-label="Flickr" class="social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="7" cy="12" r="5" />
+                                <circle cx="17" cy="12" r="5" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="homepage-text-width reveal delay-200">
+                    <h1 id="homepage-title" class="typeit-target glow-text"></h1>
+                    <p class="homepage-subtitle">嗨！這裡是 ㄉㄉ</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ====== LIGHTBOX ====== -->
+    <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
+        <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+    </div>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <p>© 2026 ddwoof</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
