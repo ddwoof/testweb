@@ -257,7 +257,7 @@ hr {
 
 .nav-toggle-btn {
     display: none;
-    /* Only visible on desktop */
+    /* Hidden by default, shown on desktop */
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: #fff;
@@ -270,9 +270,6 @@ hr {
     z-index: 150;
     margin-left: 1rem;
     pointer-events: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .nav-toggle-icon {
@@ -298,9 +295,11 @@ hr {
 }
 
 /* Desktop Expandable State */
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
     .nav-toggle-btn {
         display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .nav-links {
@@ -442,7 +441,8 @@ hr {
 }
 
 .mobile-menu-paw {
-    width: 65px;
+    width: 50px;
+    /* Reduced from 65px */
     height: auto;
     filter: brightness(1);
     opacity: 1;
@@ -450,10 +450,12 @@ hr {
 
 .mobile-menu a {
     color: #fff;
-    font-size: 2.8rem;
-    font-weight: 950;
+    font-size: 1.0rem;
+    /* Reduced from 2.8rem */
+    font-weight: 800;
+    /* Reduced from 950 */
     text-decoration: none;
-    line-height: 1;
+    line-height: 1.2;
     opacity: 0.9;
     transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
 }
@@ -1017,13 +1019,21 @@ body.lightbox-open .carousel-dots {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
+    .nav-links-wrapper {
+        display: none !important;
+    }
+
     .nav-links {
         display: none;
     }
 
     .hamburger {
         display: flex;
+    }
+
+    .nav-toggle-btn {
+        display: none !important;
     }
 
     .portfolio-grid {

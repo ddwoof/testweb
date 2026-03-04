@@ -5,6 +5,22 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ===========================
+    // HIDE PAW TOGGLE ON MOBILE/TABLET
+    // ===========================
+    const handleNavToggleVisibility = () => {
+        const wrapper = document.getElementById('navLinksWrapper');
+        if (wrapper) {
+            if (window.innerWidth < 1024) {
+                wrapper.style.display = 'none';
+            } else {
+                wrapper.style.display = '';
+            }
+        }
+    };
+    handleNavToggleVisibility();
+    window.addEventListener('resize', handleNavToggleVisibility);
+
+    // ===========================
     // PRELOADER (Phase 3)
     // ===========================
     // ===========================
