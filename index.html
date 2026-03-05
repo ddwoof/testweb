@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css?v=2" />
+    <link rel="icon" type="image/webp" href="assets/img/paw_icon.webp" />
+    <link rel="stylesheet" href="css/styles.css?v=6" />
 </head>
 
 <body>
@@ -115,7 +116,11 @@
             <!-- Right column: Avatar + Title + Text -->
             <div class="homepage-right-col">
                 <div class="avatar-container">
-                    <img src="assets/img/icon.webp" alt="DD_Woof" class="homepage-icon" />
+                    <div class="avatar-icon-wrap">
+                        <div class="easter-egg-bubble" id="easterEggBubble"></div>
+                        <img src="assets/img/icon.webp" alt="DD_Woof" class="homepage-icon" id="avatarIcon" />
+                        <span class="easter-egg-wave" id="easterEggWave">👋</span>
+                    </div>
                     <div class="homepage-socials">
                         <a href="https://x.com/DD_Woof" target="_blank" rel="noopener" aria-label="X (Twitter)"
                             class="social-icon">
@@ -152,7 +157,7 @@
         <p>© 2026 ddwoof</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=5"></script>
 </body>
 
 </html>

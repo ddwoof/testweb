@@ -284,5 +284,97 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+    // ===========================
+    // AVATAR EASTER EGG
+    // ===========================
+    const avatarIcon = document.getElementById('avatarIcon');
+    const easterEggBubble = document.getElementById('easterEggBubble');
+    const easterEggWave = document.getElementById('easterEggWave');
+
+    if (avatarIcon && easterEggBubble && easterEggWave) {
+        let pokeCount = 0;
+        let pokeTimer = null;
+        let easterEggAudio = null;
+        let isPlaying = false;
+        let hasTriggered = false;
+
+        // ▼ Adjust these timings (in seconds) to sync with your hi.mp3 ▼
+        const textCues = [
+            { time: 0.3, text: 'Hello!' },
+            { time: 2.1, text: 'Hello!' },
+            { time: 4.0, text: 'Hello!' },
+            { time: 5.8, text: 'Hi!' },
+        ];
+
+        const showBubble = (text) => {
+            easterEggBubble.className = 'easter-egg-bubble';
+            easterEggBubble.textContent = text;
+            // Force reflow for re-animation
+            void easterEggBubble.offsetWidth;
+            easterEggBubble.classList.add('show');
+        };
+
+        const hideBubble = () => {
+            easterEggBubble.classList.remove('show');
+            easterEggBubble.classList.add('hide');
+            setTimeout(() => {
+                easterEggBubble.className = 'easter-egg-bubble';
+            }, 300);
+        };
+
+        const resetEasterEgg = () => {
+            isPlaying = false;
+            easterEggBubble.className = 'easter-egg-bubble';
+            easterEggWave.classList.remove('show');
+        };
+
+        avatarIcon.addEventListener('click', () => {
+            if (isPlaying || hasTriggered) return;
+
+            pokeCount++;
+
+            // Visual poke feedback
+            avatarIcon.classList.remove('poked');
+            void avatarIcon.offsetWidth;
+            avatarIcon.classList.add('poked');
+
+            // Reset counter if not clicked again within 2 seconds
+            clearTimeout(pokeTimer);
+            pokeTimer = setTimeout(() => { pokeCount = 0; }, 2000);
+
+            if (pokeCount >= 3) {
+                pokeCount = 0;
+                isPlaying = true;
+                hasTriggered = true;
+
+                // Show waving hand
+                easterEggWave.classList.add('show');
+
+                // Play audio
+                if (!easterEggAudio) {
+                    easterEggAudio = new Audio('assets/hi.mp3');
+                }
+                easterEggAudio.currentTime = 0;
+                easterEggAudio.play().catch(() => { });
+
+                // Schedule text cues
+                textCues.forEach(cue => {
+                    setTimeout(() => {
+                        if (isPlaying) showBubble(cue.text);
+                    }, cue.time * 1000);
+                });
+
+                // Reset when audio ends
+                easterEggAudio.onended = () => {
+                    resetEasterEgg();
+                };
+
+                // Safety fallback: reset after 10 seconds
+                setTimeout(() => {
+                    if (isPlaying) resetEasterEgg();
+                }, 10000);
+            }
+        });
+    }
 
 });

@@ -1092,3 +1092,104 @@ body.lightbox-open .carousel-dots {
 .glow-text {
     text-shadow: 0 0 20px rgba(var(--primary-400), 0.3);
 }
+
+/* ===========================
+   AVATAR EASTER EGG
+   =========================== */
+.avatar-icon-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.easter-egg-bubble {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    display: none;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.easter-egg-bubble.show {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    animation: bubblePop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.easter-egg-bubble.hide {
+    display: block;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes bubblePop {
+    0% {
+        transform: translateX(-50%) scale(0);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.15);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+.easter-egg-wave {
+    position: absolute;
+    right: -120px;
+    top: 5%;
+    font-size: 6.5rem;
+    display: none;
+    pointer-events: none;
+    transform-origin: 70% 80%;
+    z-index: 10;
+}
+
+.easter-egg-wave.show {
+    display: block;
+    opacity: 1;
+    animation: waveHand 0.04s ease-in-out infinite alternate;
+}
+
+@keyframes waveHand {
+    0% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(25deg);
+    }
+}
+
+.homepage-icon.poked {
+    animation: pokeBounce 0.3s ease;
+}
+
+@keyframes pokeBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.92);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
