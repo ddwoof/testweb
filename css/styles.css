@@ -74,7 +74,7 @@
 }
 
 html {
-    animation: fadeInFromDark 1.5s ease-out forwards;
+    animation: fadeInFromDark 0.8s ease-out forwards;
 }
 
 /* --- Reset & Base --- */
